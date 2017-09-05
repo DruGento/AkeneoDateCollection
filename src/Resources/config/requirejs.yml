@@ -1,0 +1,4 @@
+config:
+    paths:
+        pim-datecollection-attribute-type/date-collection-field: pimdatecollectiontype/js/product/field/date-collection-field
+        pim-datecollection-attribute-type/templates/product/field/date-collection: pimdatecollectiontype/templates/product/field/date-collection.html

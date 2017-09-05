@@ -1,0 +1,3 @@
+css:
+    pim_extended_attribute_type:
+        - bundles/pimdatecollectiontype/css/date-collection.less

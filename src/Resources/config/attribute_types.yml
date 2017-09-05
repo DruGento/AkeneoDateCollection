@@ -1,0 +1,13 @@
+parameters:
+    pim_extended_attribute_type.attribute_type.date_collection.class: Pim\Bundle\DateCollectionTypeBundle\AttributeType\DateCollectionType
+    pim_extended_attribute_type.validator.constraint_guesser.date_collection.class: Pim\Bundle\DateCollectionTypeBundle\Validator\ConstraintGuesser\DateCollectionGuesser
+
+services:
+    pim_extended_attribute_type.attribute_type.date_collection:
+        class: '%pim_extended_attribute_type.attribute_type.date_collection.class%'
+        arguments:
+            - dateCollection
+            - text
+            - '@pim_catalog.validator.constraint_guesser.chained_attribute'
+        tags:
+            - { name: pim_catalog.attribute_type, alias: pim_catalog_date_collection }

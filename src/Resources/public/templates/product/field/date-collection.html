@@ -1,0 +1,94 @@
+<div id="<%- fieldId %>" class="AknDateCollection">
+    <table class="AknDateCollection-items">
+        <tbody>
+        <% if (null !== value.data) { %>
+        <% value.data.forEach(function(text){ %>
+        <tr height="70px" valign="top">
+            <% if (editMode !== 'view') { %>
+            <td class="handle" style="padding-top: 9px;"><i class="icon-reorder"></i></td>
+            <% } %>
+            <td style="padding-top: 9px;">Start:</td>
+            <td>
+
+                <div class="datetimepicker" style="position:relative;">
+                    <input name="start" class="AknTextField datepicker-field add-on AknDateCollection-item" type="text"
+                           data-locale="<%- value.locale %>" data-scope="<%- value.scope %>"
+                           value="<%- text['startDate']+' '+text['startTime'] %>"
+                    <%- editMode === 'view' ? 'disabled' : '' %>/>
+
+                    <div class="week" style="position:absolute; margin-top: 4px; width: 400px;">
+                        <label>Week:&nbsp;</label>
+                        <label><input type="checkbox" name="weekdaysMo" class="checkbox" <% if (text['weekdays'] && text['weekdays'].indexOf('Mo')!==-1) { %> checked <% } %> value="Mo">&nbsp;Mo</label>&nbsp;&nbsp;
+                        <label><input type="checkbox" name="weekdaysTu" class="checkbox" <% if (text['weekdays'] && text['weekdays'].indexOf('Tu')!==-1) { %> checked <% } %> value="Tu">&nbsp;Tu</label>&nbsp;&nbsp;
+                        <label><input type="checkbox" name="weekdaysWe" class="checkbox" <% if (text['weekdays'] && text['weekdays'].indexOf('We')!==-1) { %> checked <% } %> value="We">&nbsp;We</label>&nbsp;&nbsp;
+                        <label><input type="checkbox" name="weekdaysTh" class="checkbox" <% if (text['weekdays'] && text['weekdays'].indexOf('Th')!==-1) { %> checked <% } %> value="Th">&nbsp;Th</label>&nbsp;&nbsp;
+                        <label><input type="checkbox" name="weekdaysFr" class="checkbox" <% if (text['weekdays'] && text['weekdays'].indexOf('Fr')!==-1) { %> checked <% } %> value="Fr">&nbsp;Fr</label>&nbsp;&nbsp;
+                        <label><input type="checkbox" name="weekdaysSa" class="checkbox" <% if (text['weekdays'] && text['weekdays'].indexOf('Sa')!==-1) { %> checked <% } %> value="Sa">&nbsp;Sa</label>&nbsp;&nbsp;
+                        <label><input type="checkbox" name="weekdaysSu" class="checkbox" <% if (text['weekdays'] && text['weekdays'].indexOf('Su')!==-1) { %> checked <% } %> value="Su">&nbsp;Su</label>&nbsp;&nbsp;
+                    </div>
+                </div>
+
+            </td>
+
+            <td style="padding-top: 9px;">End:</td>
+            <td>
+
+                <div class="datetimepicker">
+                    <input name="end" class="AknTextField datepicker-field add-on AknDateCollection-item" type="text"
+                           data-locale="<%- value.locale %>" data-scope="<%- value.scope %>"
+                           value="<%- text['endDate']+' '+text['endTime'] %>"
+                    <%- editMode === 'view' ? 'disabled' : '' %>/>
+                </div>
+
+            </td>
+
+            <% if (editMode !== 'view') { %>
+            <td class="AknDateCollection-actions">
+                <button class="AknButton AknButton--small AknDateCollection-deleteButton"
+                        type="button"><i class="icon-remove"></i></button>
+            </td>
+            <% } %>
+        </tr>
+        <% }); %>
+        <% } %>
+
+
+
+
+        <% if (editMode !== 'view') { %>
+        <tr height="70px" valign="top">
+            <td style="padding-top: 9px;"></td>
+
+            <td style="padding-top: 9px;">Start:</td>
+            <td>
+                <div class="datetimepicker" style="position:relative;">
+                    <input type="text" name="start" class="AknTextField AknDateField AknDateCollection-newItem datepicker-field add-on" />
+
+                    <div class="week-newItem" style="position:absolute; margin-top: 4px; width: 400px;">
+                        <label>Week:&nbsp;</label>
+                        <label><input type="checkbox" name="weekdaysMo" class="checkbox" value="Mo">&nbsp;Mo</label>&nbsp;&nbsp;
+                        <label><input type="checkbox" name="weekdaysTu" class="checkbox" value="Tu">&nbsp;Tu</label>&nbsp;&nbsp;
+                        <label><input type="checkbox" name="weekdaysWe" class="checkbox" value="We">&nbsp;We</label>&nbsp;&nbsp;
+                        <label><input type="checkbox" name="weekdaysTh" class="checkbox" value="Th">&nbsp;Th</label>&nbsp;&nbsp;
+                        <label><input type="checkbox" name="weekdaysFr" class="checkbox" value="Fr">&nbsp;Fr</label>&nbsp;&nbsp;
+                        <label><input type="checkbox" name="weekdaysSa" class="checkbox" value="Sa">&nbsp;Sa</label>&nbsp;&nbsp;
+                        <label><input type="checkbox" name="weekdaysSu" class="checkbox" value="Su">&nbsp;Su</label>
+                    </div>
+                </div>
+
+            </td>
+            <td style="padding-top: 9px;">End:</td>
+            <td>
+                <div class="datetimepicker">
+                    <input type="text" name="end" class="AknTextField AknDateField AknDateCollection-newItem datepicker-field add-on" />
+                </div>
+            </td>
+
+            <td class="AknDateCollection-actions"><button
+                    class="AknButton AknButton--small AknDateCollection-addButton"
+            >Add item</button></td>
+        </tr>
+        <% } %>
+        </tbody>
+    </table>
+</div>

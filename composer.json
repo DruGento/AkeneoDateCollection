@@ -1,0 +1,46 @@
+{
+    "name": "drugento/date-collection-type",
+    "type": "symfony-bundle",
+    "description": "Provides new date collection type for Akeneo PIM",
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "name": "Drugento",
+            "homepage": "http://www.drugento.com",
+            "email": "admin@drugento.com",
+            "role": "Developer"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/akeneo/pim-community-dev.git"
+        }
+    ],
+    "require": {
+        "akeneo/pim-community-dev": "1.7.*"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "@stable",
+        "phpspec/phpspec": "@stable"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pim\\Bundle\\DateCollectionTypeBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Pim\\Bundle\\ExtendedBundle\\": "doc/example/PimBundle/ExtendedBundle"
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.1.x-dev",
+            "dev-1.0": "1.0.x-dev"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+parameters:
+    pim_catalog.updater.setter.date_collection_value.class: Pim\Bundle\DateCollectionTypeBundle\Updater\Setter\DateCollectionAttributeSetter
+    pim_catalog.updater.copier.date_collection_value.class: Pim\Bundle\DateCollectionTypeBundle\Updater\Copier\DateCollectionAttributeCopier
+
+services:
+    pim_catalog.updater.setter.date_collection_value:
+        class: '%pim_catalog.updater.setter.date_collection_value.class%'
+        parent: pim_catalog.updater.setter.abstract
+        arguments:
+            - ['pim_catalog_date_collection']
+        tags:
+            - { name: 'pim_catalog.updater.setter' }
+
+    pim_catalog.updater.copier.date_collection_value:
+        class: '%pim_catalog.updater.copier.date_collection_value.class%'
+        parent: pim_catalog.updater.copier.abstract
+        arguments:
+            - ['pim_catalog_date_collection']
+            - ['pim_catalog_date_collection']
+        tags:
+            - { name: 'pim_catalog.updater.copier' }

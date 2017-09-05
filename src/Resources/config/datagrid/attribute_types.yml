@@ -1,0 +1,12 @@
+parameters:
+    pim_datagrid.product.attribute_type.pim_catalog_date_collection.template: PimDateCollectionTypeBundle:datagrid/property:date_collection.html.twig
+    pim_datagrid.product.attribute_type.pim_catalog_date_collection:
+        column:
+            type:          product_value_date_collection
+            selector:      product_value_base
+            frontend_type: html
+            template:      '%pim_datagrid.product.attribute_type.pim_catalog_date_collection.template%'
+        filter:
+            type:          product_value_date_collection
+            ftype:         string
+        sorter: ~

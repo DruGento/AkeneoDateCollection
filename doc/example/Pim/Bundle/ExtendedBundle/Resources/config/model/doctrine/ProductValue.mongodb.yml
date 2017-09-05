@@ -1,0 +1,5 @@
+Pim\Bundle\ExtendedBundle\Model\ProductValue:
+    type: embeddedDocument
+    fields:
+        dateCollection:
+            type: raw

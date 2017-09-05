@@ -1,0 +1,8 @@
+parameters:
+    pim_serializer.normalizer.flat.date_collection.class: Pim\Bundle\DateCollectionTypeBundle\Normalizer\Flat\DateCollectionNormalizerFlat
+
+services:
+    pim_versioning.serializer.normalizer.flat.date_collection:
+        class: '%pim_serializer.normalizer.flat.date_collection.class%'
+        tags:
+            - { name: pim_versioning.serializer.normalizer, priority: 92 }
