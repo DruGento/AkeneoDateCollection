@@ -11,7 +11,7 @@ use Pim\Component\Catalog\Validator\AttributeValidatorHelper;
 /**
  * Sets a date value in many products
  *
- * @author   Nickolay Konchits <nick@akeneo.com>
+ * @author   Nickolay Konchits <nick@drugento.com>
  * @author   Alexander Yurchik <admin@drugento.com>
  * @copyright 2017 Drugento LLC (http://www.drugento.com)
  * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)

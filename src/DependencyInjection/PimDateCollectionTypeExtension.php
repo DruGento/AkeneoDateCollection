@@ -12,7 +12,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 /**
  * DI for the DateCollectionType bundle
  *
- * @author   Nickolay Konchits <nick@akeneo.com>
+ * @author   Nickolay Konchits <nick@drugento.com>
  * @author   Alexander Yurchik <admin@drugento.com>
  * @copyright 2017 Drugento LLC (http://www.drugento.com)
  * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
@@ -29,18 +29,24 @@ class PimDateCollectionTypeExtension extends Extension
         $loader->load('attribute_types.yml');
         $loader->load('comparators.yml');
         $loader->load('completeness.yml');
+        $loader->load('form_types.yml');
         $loader->load('normalizers.yml');
         $loader->load('denormalizers.yml');
         $loader->load('providers.yml');
+        $loader->load('query_builders.yml');
         $loader->load('updaters.yml');
         $loader->load('validators.yml');
 
         $loader->load('datagrid/attribute_types.yml');
+        $loader->load('datagrid/filters.yml');
         $loader->load('datagrid/formatters.yml');
 
         $this->loadAttributeIcons($loader, $container);
 
         $registeredBundles = $container->getParameter('kernel.bundles');
+        if (array_key_exists('PimElasticSearchBundle', $registeredBundles)) {
+            $loader->load('storage_driver/doctrine/elasticsearch.yml');
+        }
     }
 
     /**

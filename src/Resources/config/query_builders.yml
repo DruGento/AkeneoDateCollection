@@ -1,0 +1,9 @@
+services:
+    pim_extended_attribute_type.doctrine.query.filter.date_collection:
+        class: '%pim_catalog.doctrine.query.filter.string.class%'
+        arguments:
+            - '@pim_catalog.validator.helper.attribute'
+            - ['pim_catalog_date_collection']
+            - ['CONTAINS', 'DOES NOT CONTAIN', 'EMPTY', 'NOT EMPTY']
+        tags:
+            - { name: 'pim_catalog.doctrine.query.filter', priority: 30 }

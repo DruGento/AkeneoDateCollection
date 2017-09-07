@@ -1,0 +1,10 @@
+parameters:
+    pim_filter.form.type.date_collection.class: Pim\Bundle\DateCollectionTypeBundle\DataGrid\Form\Type\Filter\DateCollectionFilterType
+
+services:
+    pim_filter.form.type.date_collection:
+        class: '%pim_filter.form.type.date_collection.class%'
+        arguments:
+            - '@translator'
+        tags:
+            - { name: form.type, alias: pim_type_date_collection_filter }

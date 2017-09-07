@@ -1,0 +1,11 @@
+parameters:
+    pim_extended_attribute_type.date_collection_filter.class: Pim\Bundle\DateCollectionTypeBundle\Filter\ProductValue\DateCollectionFilter
+
+services:
+    pim_extended_attribute_type.date_collection_filter:
+        class: '%pim_extended_attribute_type.date_collection_filter.class%'
+        arguments:
+            - '@form.factory'
+            - '@pim_filter.product_utility'
+        tags:
+            - { name: oro_filter.extension.orm_filter.filter, type: product_value_date_collection }

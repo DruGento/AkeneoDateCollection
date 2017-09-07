@@ -33,7 +33,7 @@ use Pim\Component\Connector\ArrayConverter\StandardToFlat\Product\ValueConverter
  *      'schedule-en_US-ecommerce' => "[{"startDate":"10.08.2017","startTime":"10:00","endDate":"09.09.2017","endTime":"22:30","weekdays":["Mo","Tu","We","Th","Fr"]}]",
  * ]
  *
- * @author   Nickolay Konchits <nick@akeneo.com>
+ * @author   Nickolay Konchits <nick@drugento.com>
  * @author   Alexander Yurchik <admin@drugento.com>
  * @copyright 2017 Drugento LLC (http://www.drugento.com)
  * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
